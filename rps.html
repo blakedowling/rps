@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- Donald vs. Hillary... it's on -->
+<html lang="en-us">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Donald vs. Hillary</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="donald.css">
+		<script type="text/javascript" src="rps.js"></script>
+		
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+	</head>
+	<body>
+		<header>
+			<h1>Donald vs. Hillary</h1>
+			<h3>Rocks Paper Scissors</h3>
+		</header>
+		<div class="container">
+			
+			<h1 class="text-center" id="visible">Choose your player</h1>
+			<div class="row">
+				<div class="col-xs-5" style="text-align:center; display:inline;">
+					<img style="float: right;" class="donald" src="donald-trump.jpg" alt="Donald">
+					<!--<span id="donaldCount" style="position:relative; float:right;">0</span>-->
+				</div>
+				
+				<div class="col-xs-2" id="score">
+					<span id="donaldCount"></span>
+					<span></span>
+					<span id="hillaryCount"></span>
+				</div>
+				
+				<div style="display:inline-block" class="col-xs-5">
+					<!--<span id="hillaryCount" style="float:left;">0</span>-->
+					<img class="hillary" src="hillary-clinton-thumbs-up.jpg" alt="Hillary">
+				</div>
+
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" role="dialog">
+					<div class="modal-dialog">
+					
+					  <!-- Modal content-->
+					  <div class="modal-content">
+					    <div class="modal-header">
+					      <button type="button" class="close" data-dismiss="modal">&times;</button>
+					      <h2 class="modal-title"></h2>
+					    </div>
+					    
+					    <div class="modal-body">
+					      <img id="winningPres" src="" alt="President">
+					    </div>
+					    
+					    <div class="modal-footer">
+					      <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">Play again!</button>
+					    </div>
+					  </div>
+					  
+					</div>
+				</div>
+			</div>
+			
+			<h1 class="text-center"><span id="rps">Let the games begin!</span></h1>
+			
+			<div class="row" id="hidden">
+
+				<h1 class="text-center">Best 2 out of 3</h1>
+				<img src="rock.png" class="rock">
+				<img src="paper.png" class="paper">
+				<img src="scissors.png" class="scissors">
+				<br>
+
+			</div>
+		</div>
+	</body>
+</html>

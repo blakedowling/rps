@@ -1,0 +1,120 @@
+html {
+    margin-top: -20px;
+}
+body {
+    background-color: #f1f3f4;
+}
+
+header {
+    text-align: center;
+    height: 120px;
+    background: url("flag.jpg");
+    color: #E11E26;
+}
+header > h1 {
+    font-size: 50px;
+    padding-top:15px;
+    font-weight: bold;
+}
+header > h3 {
+    margin-top: 4px;
+}
+#visible {
+    padding-bottom: 10px;
+}
+#score {
+    padding-top:25px;
+}
+img {
+    border-radius: 5px;
+}
+.donald {
+    margin-right:20px;
+    width: 300px;
+    float:right;
+}
+.hillary {
+    margin-left:20px;
+    width: 300px;
+    float:left;
+    display:inline-block;
+}
+#donaldCount {
+    float:left;
+}
+#hillaryCount {
+    float: right;
+}
+#score {
+    text-align: center;
+}
+#rps {
+    display: none;
+}
+div span {
+    font-size: 55px;
+}
+.donald:hover, .hillary:hover, .rock:hover, .paper:hover, .scissors:hover { cursor: pointer; }
+.buttons {
+    padding-top: 40px;
+}
+
+#hidden {
+    display:none;
+    text-align: center;
+}
+#hidden > img {
+    margin: 0 20px 0;
+}
+#visible {
+    display:block;
+}
+.modal-title {
+    font-size: 24px;
+}
+.modal-body, .modal-header {
+    text-align:center;
+}
+.modal-footer {
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+        header > h1 {
+            font-size: 40px;
+        }
+        div > h1 {
+            font-size: 30px;
+        }
+        div span {
+            font-size:34px;
+        }
+        .hillary {
+            margin-left:0;
+            width: 85%;
+        }
+        .donald {
+            margin-right:0;
+            width:85%;
+        }
+        .rock, .paper, .scissors {
+            width:25%;
+        }
+}
+@media screen and (max-width: 480px) {
+        header > h1 {
+            font-size: 30px;
+        }
+        div > h1 {
+            font-size: 28px;
+        }
+        div span {
+            font-size:24px;
+        }
+        .rock, .paper, .scissors {
+            width:120px;
+        }
+}
+@media screen and (max-width: 400px) {
+    
+}

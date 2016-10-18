@@ -23,6 +23,7 @@ $(document).ready(function() {
     var sci = function() { $('#rps').html("Scissors..."); }
     var shoo = function() { $('#rps').html("Shoot!"); }
     
+    //this function reenables all buttons and returns the pictures to their original
     var enableRPS = function() {
         $('body').css("pointer-events", "auto");
         $('#rps').html("Choose again!");

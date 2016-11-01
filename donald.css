@@ -1,14 +1,19 @@
 html {
     margin-top: -20px;
+    min-width: 400px;
 }
 body {
     background-color: #f1f3f4;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    /*background-image: url('whiteHouse.jpg');*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: cover;*/
 }
 
 header {
     text-align: center;
     height: 120px;
-    background: url("flag.jpg");
+    background-image: url('flag.jpg');
     color: #E11E26;
 }
 header > h1 {
@@ -28,28 +33,44 @@ header > h3 {
 img {
     border-radius: 5px;
 }
-.donald {
+.donaldRock, .donaldPaper, .donaldScissors, .hillaryRock, .hillaryPaper, .hillaryScissors {
+    display: none;
+}
+.donald, .donaldRock, .donaldPaper, .donaldScissors {
     margin-right:20px;
     width: 300px;
     float:right;
 }
-.hillary {
+.hillary, .hillaryRock, .hillaryPaper, .hillaryScissors {
     margin-left:20px;
     width: 300px;
     float:left;
-    display:inline-block;
+    /*display:inline-block;*/
 }
 #donaldCount {
     float:left;
+    width: 50px;
+    /*border: 1px solid black;*/
 }
 #hillaryCount {
+    /*border: 1px solid black;*/
+    width: 50px;
     float: right;
 }
 #score {
     text-align: center;
 }
 #rps {
+    font-size:32px;
     display: none;
+    bottom:0;
+}
+#donaldChoice {
+    text-align:right;
+    padding-right:20px;
+}
+#hillaryChoice {
+    padding-left: 20px;
 }
 div span {
     font-size: 55px;
@@ -66,6 +87,7 @@ div span {
 #hidden > img {
     margin: 0 20px 0;
 }
+
 #visible {
     display:block;
 }
@@ -78,6 +100,9 @@ div span {
 .modal-footer {
     text-align: center;
 }
+.rock, .paper, .scissors {
+    border: 2px solid black;
+}
 
 @media screen and (max-width: 768px) {
         header > h1 {
@@ -89,16 +114,19 @@ div span {
         div span {
             font-size:34px;
         }
-        .hillary {
+        .hillary, .hillaryRock, .hillaryPaper, .hillaryScissors {
             margin-left:0;
             width: 85%;
         }
-        .donald {
+        .donald, .donaldRock, .donaldPaper, .donaldScissorss {
             margin-right:0;
             width:85%;
         }
         .rock, .paper, .scissors {
             width:25%;
+        }
+        #rps {
+            font-size:20px;
         }
 }
 @media screen and (max-width: 480px) {
@@ -114,7 +142,10 @@ div span {
         .rock, .paper, .scissors {
             width:120px;
         }
+        #rps {
+            font-size: 16px;
+        }
 }
 @media screen and (max-width: 400px) {
-    
+
 }

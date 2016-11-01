@@ -31,18 +31,24 @@
 			<div class="row">
 				<div class="col-xs-5" style="text-align:center; display:inline;">
 					<img style="float: right;" class="donald" src="donald-trump.jpg" alt="Donald">
-					<!--<span id="donaldCount" style="position:relative; float:right;">0</span>-->
+					<img style="float: right;" class="donaldRock" src="donald-rock.jpeg" alt="Donald">
+					<img style="float: right;" class="donaldPaper" src="donald-paper.png" alt="Donald">
+					<img style="float: right;" class="donaldScissors" src="donald-scissors.jpg" alt="Donald">
 				</div>
 				
 				<div class="col-xs-2" id="score">
 					<span id="donaldCount"></span>
-					<span></span>
 					<span id="hillaryCount"></span>
+					<br>
+					<br>
+					<h4 id="rps"></h4>
 				</div>
 				
-				<div style="display:inline-block" class="col-xs-5">
-					<!--<span id="hillaryCount" style="float:left;">0</span>-->
+				<div class="col-xs-5">
 					<img class="hillary" src="hillary-clinton-thumbs-up.jpg" alt="Hillary">
+					<img class="hillaryRock" src="hillary-rock.jpg" alt="Hillary">
+					<img class="hillaryPaper" src="hillary-paper.jpg" alt="Hillary">
+					<img class="hillaryScissors" src="hillary-scissors.jpg" alt="Hillary">
 				</div>
 
 				<!-- Modal -->
@@ -64,16 +70,24 @@
 					      <button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">Play again!</button>
 					    </div>
 					  </div>
-					  
 					</div>
 				</div>
 			</div>
 			
-			<h1 class="text-center"><span id="rps">Let the games begin!</span></h1>
-			
+			<div class="row">
+				<div class="col-xs-4">
+					<h1 id="donaldChoice"></h1>
+				</div>
+				<div class="col-xs-4">
+					<h1 class="text-center" id="2of3"></h1>
+				</div>
+				<div class="col-xs-4">
+					<h1 id="hillaryChoice"></h1>
+				</div>
+			</div>
+	
 			<div class="row" id="hidden">
-
-				<h1 class="text-center">Best 2 out of 3</h1>
+				<!--<h1 class="text-center">Best 2 out of 3</h1>-->
 				<img src="rock.png" class="rock">
 				<img src="paper.png" class="paper">
 				<img src="scissors.png" class="scissors">

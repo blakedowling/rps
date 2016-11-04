@@ -5,25 +5,14 @@
 //4. have the "you're a phony" text cycle through different funny phrases
 
 $(document).ready(function() {
-
     var donald = false;
     var hillary = false;
     var date = new Date();
-    //var hours = date.getHours();
     var you = 0;
     var enemy = 0;
     var donaldCount = 0;
     var hillaryCount = 0;
     var computerChoice;
-    //console.log("Hours: " + hours);
-    // if (hours < 12) {
-    //     $("#visible").html("Good morning! Choose your player.");
-    // } else if (hours < 17) {
-    //     $('#visible').html("Good afternoon! Choose your player.");
-    // } else {
-    //     $("#visible").html("Good evening! Choose your player.");
-    // }
-    
     var roc = function() { console.log("it should say 'rock..."); $('#rps').html("Rock..."); }
     var pap = function() { $('#rps').html("Paper..."); }
     var sci = function() { $('#rps').html("Scissors..."); }
@@ -41,7 +30,7 @@ $(document).ready(function() {
         hillaryPic();
     }
     
-    //testing this
+    //sets the computer's choice
     var computer = function() {
         computerChoice = Math.random();
         if (computerChoice < 0.34) {
@@ -54,6 +43,7 @@ $(document).ready(function() {
         return computerChoice;
     }
     
+    //displays rocks, paper scissors, shoot and makes everything on page unclickable
     var shoot = function() {
         console.log("shoot function called");
         $('body').css("pointer-events", "none");
@@ -63,6 +53,7 @@ $(document).ready(function() {
         setTimeout(shoo, 2200);
     };
     
+    //RPS icons fade out
     var RPSfadeOut = function() {
         $('.rock').fadeOut();
         $('.paper').fadeOut();
@@ -70,6 +61,7 @@ $(document).ready(function() {
         $('#2of3').fadeOut();
     }
     
+    //RPS icons fade in
     var RPSfadeIn = function() {
         $('.rock').fadeIn();
         $('.paper').fadeIn();
@@ -78,6 +70,7 @@ $(document).ready(function() {
         
     }
     
+    //shows main donald pic and hides all others
     var donaldPic = function() {
         $('.donald').show();
         $('.donaldPaper').hide();
@@ -85,6 +78,7 @@ $(document).ready(function() {
         $('.donaldRock').hide();
     }
     
+    //shows donald rock pic and hides all others
     var donaldRock = function() {
         $('.donald').hide();
         $('.donaldPaper').hide();
@@ -92,6 +86,8 @@ $(document).ready(function() {
         $('.donaldRock').show();
         $('#donaldChoice').html("Rock");
     }
+    
+    //shows donald paper pic and hides all others
     var donaldPaper = function() {
         $('.donald').hide();
         $('.donaldPaper').show();
@@ -99,6 +95,8 @@ $(document).ready(function() {
         $('.donaldRock').hide();
         $('#donaldChoice').html("Paper");
     }
+    
+    //shows donald scissors pic and hides all others
     var donaldScissors = function() {
         $('.donald').hide();
         $('.donaldPaper').hide();
@@ -107,13 +105,15 @@ $(document).ready(function() {
         $('#donaldChoice').html("Scissors");
     }
     
+    //shows main hillary pic and hides all others
     var hillaryPic = function() {
         $('.hillary').show();
         $('.hillaryRock').hide();
         $('.hillaryPaper').hide();
         $('.hillaryScissors').hide();
-        
     }
+    
+    //shows hillary rock pic and hides all others
     var hillaryRock = function() {
         $('.hillary').hide();
         $('.hillaryRock').show();
@@ -121,6 +121,8 @@ $(document).ready(function() {
         $('.hillaryScissors').hide();
         $('#hillaryChoice').html("Rock");
     }
+    
+    //shows hillary paper pic and hides all others
     var hillaryPaper = function() {
         $('.hillary').hide();
         $('.hillaryRock').hide();
@@ -128,6 +130,8 @@ $(document).ready(function() {
         $('.hillaryScissors').hide();
         $('#hillaryChoice').html("Paper");
     }
+    
+    //shows hillary scissors pic and hides all others
     var hillaryScissors = function() {
         $('.hillary').hide();
         $('.hillaryRock').hide();
@@ -136,7 +140,8 @@ $(document).ready(function() {
         $('#hillaryChoice').html("Scissors");
     }
     
-    var disable = function() {
+    //resets everything on the page
+    var reset = function() {
         donaldCount = 0;
         hillaryCount = 0;
         donaldPic();
@@ -151,9 +156,10 @@ $(document).ready(function() {
         $("#visible").html("Choose your player");
         $('#rps').hide();
         $('#2of3').html("");
-        console.log("disable function called");
+        console.log("reset function called");
     };
     
+    //shows
     var showRPS = function() {
         console.log('showRPS function called');
         $('#rps').show();
@@ -161,39 +167,42 @@ $(document).ready(function() {
         $('#hidden').show();
     };
     
+    //displays the correct score
     var score = function() {
         $("#donaldCount").html(donaldCount);
         $('#hillaryCount').html(hillaryCount);
     }
     
+    //checks to see if either opponent has reached two wins
     var gameOver = function() {
         console.log("gameOver function called");
         if (you === 2 && donald) {
             $("#winningPres").attr("src","donald-wins.jpg");
             $('.modal-title').html("Congratulations Donald! You are now the POTUS!")
             $("#myModal").modal();
-            disable();
+            reset();
         }
         else if (you === 2 && hillary) {
             $("#winningPres").attr("src","clinton-wins.JPG");
             $('.modal-title').html("Congratulations Hillary! You are now the POTUS!")
             $("#myModal").modal();
-            disable();
+            reset();
         }
         else if (enemy === 2 && donald) {
             $("#winningPres").attr("src","clinton-wins.JPG");
             $('.modal-title').html("Sorry Donald! Hillary is now the POTUS!")
             $("#myModal").modal();
-            disable();
+            reset();
         }
         else if (enemy === 2 && hillary) {
             $("#winningPres").attr("src","donald-wins.jpg");
             $('.modal-title').html("Sorry Hillary! Donald is now the POTUS!")
             $("#myModal").modal();
-            disable();
+            reset();
         }
     };
     
+    //resets the scores when either candidate is chosen
     var presidentClick = function() {
         setTimeout(showRPS, 800);
         you = 0;
@@ -204,7 +213,7 @@ $(document).ready(function() {
         $("#hillaryCount").html(hillaryCount);
     };
     
-    
+    //when donald is chosen
     $('.donald').click(function() {
         presidentClick();
         $("#visible").html("You're a phony and a fraud!");
@@ -218,9 +227,9 @@ $(document).ready(function() {
         $('.hillaryScissors').css("box-shadow", "0 0 0 0 black");
         donald = true;
         hillary = false;
-        
     });
     
+    //when hillary is chosen
     $('.hillary').click(function() {
         presidentClick();
         $("#visible").html("Liars never win!");
@@ -236,8 +245,7 @@ $(document).ready(function() {
         donald = false;
     });
     
-    
-    
+    //called when user chooses rock
     $('.rock').click(function() {
         shoot();
         RPSfadeOut();
@@ -245,10 +253,10 @@ $(document).ready(function() {
         setTimeout(enableRPS, 5000);
         var userChoice = "rock";
         computer();
-        
         if(donald) {
             setTimeout(donaldRock, 2200);
-        } else {
+        }
+        else {
             setTimeout(hillaryRock, 2200);
         }
     
@@ -291,6 +299,7 @@ $(document).ready(function() {
         setTimeout(gameOver, 4500);
     });
     
+    //called when user chooses paper
     $('.paper').click(function() {
         shoot();
         RPSfadeOut();
@@ -301,7 +310,8 @@ $(document).ready(function() {
         
         if (donald) {
             setTimeout(donaldPaper, 2200);
-        } else {
+        }
+        else {
             setTimeout(hillaryPaper, 2200);
         }
         
@@ -342,6 +352,7 @@ $(document).ready(function() {
         setTimeout(gameOver, 4500);
     });
     
+    //called when user chooses scissors
     $('.scissors').click(function() {
         shoot();
         RPSfadeOut();
@@ -352,7 +363,8 @@ $(document).ready(function() {
         
         if (donald) {
             setTimeout(donaldScissors, 2200);
-        } else {
+        }
+        else {
             setTimeout(hillaryScissors, 2200);
         }
         

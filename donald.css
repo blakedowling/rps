@@ -4,10 +4,7 @@ html {
 }
 body {
     background-color: #f1f3f4;
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    /*background-image: url('whiteHouse.jpg');*/
-    /*background-repeat: no-repeat;*/
-    /*background-size: cover;*/
+    font-family: "Comic Sans MS", sans-serif;
 }
 
 header {
@@ -49,12 +46,12 @@ img {
 }
 #donaldCount {
     float:left;
-    width: 50px;
+    /*width: 50px;*/
     /*border: 1px solid black;*/
 }
 #hillaryCount {
     /*border: 1px solid black;*/
-    width: 50px;
+    /*width: 50px;*/
     float: right;
 }
 #score {
@@ -92,7 +89,7 @@ div span {
     display:block;
 }
 .modal-title {
-    font-size: 24px;
+    font-size: 22px;
 }
 .modal-body, .modal-header {
     text-align:center;
@@ -118,7 +115,7 @@ div span {
             margin-left:0;
             width: 85%;
         }
-        .donald, .donaldRock, .donaldPaper, .donaldScissorss {
+        .donald, .donaldRock, .donaldPaper, .donaldScissors {
             margin-right:0;
             width:85%;
         }
@@ -130,22 +127,19 @@ div span {
         }
 }
 @media screen and (max-width: 480px) {
-        header > h1 {
-            font-size: 30px;
-        }
-        div > h1 {
-            font-size: 28px;
-        }
-        div span {
-            font-size:24px;
-        }
-        .rock, .paper, .scissors {
-            width:120px;
-        }
-        #rps {
-            font-size: 16px;
-        }
-}
-@media screen and (max-width: 400px) {
-
+    header > h1 {
+        font-size: 30px;
+    }
+    div > h1 {
+        font-size: 28px;
+    }
+    div span {
+        font-size:24px;
+    }
+    .rock, .paper, .scissors {
+        width:120px;
+    }
+    #rps {
+        font-size: 16px;
+    }
 }

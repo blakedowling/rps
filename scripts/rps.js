@@ -177,25 +177,25 @@ $(document).ready(function() {
     var gameOver = function() {
         console.log("gameOver function called");
         if (you === 2 && donald) {
-            $("#winningPres").attr("src","donald-wins.jpg");
+            $("#winningPres").attr("src","media/images/donald-wins.jpg");
             $('.modal-title').html("Congratulations Donald! You are now the POTUS!")
             $("#myModal").modal();
             reset();
         }
         else if (you === 2 && hillary) {
-            $("#winningPres").attr("src","clinton-wins.JPG");
+            $("#winningPres").attr("src","media/images/clinton-wins.JPG");
             $('.modal-title').html("Congratulations Hillary! You are now the POTUS!")
             $("#myModal").modal();
             reset();
         }
         else if (enemy === 2 && donald) {
-            $("#winningPres").attr("src","clinton-wins.JPG");
+            $("#winningPres").attr("src","media/images/clinton-wins.JPG");
             $('.modal-title').html("Sorry Donald! Hillary is now the POTUS!")
             $("#myModal").modal();
             reset();
         }
         else if (enemy === 2 && hillary) {
-            $("#winningPres").attr("src","donald-wins.jpg");
+            $("#winningPres").attr("src","media/images/donald-wins.jpg");
             $('.modal-title').html("Sorry Hillary! Donald is now the POTUS!")
             $("#myModal").modal();
             reset();

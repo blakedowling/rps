@@ -46,12 +46,8 @@ img {
 }
 #donaldCount {
     float:left;
-    /*width: 50px;*/
-    /*border: 1px solid black;*/
 }
 #hillaryCount {
-    /*border: 1px solid black;*/
-    /*width: 50px;*/
     float: right;
 }
 #score {
